@@ -32,13 +32,32 @@ span {
     font-size: 14px;
 }
 
+i {
+    position: relative;
+    left: 31.5%;
+    bottom: 37px;
+    color: grey;
+    cursor: pointer;
+}
+
+.close-eye {
+    display: none;
+}
+
 a {
     text-decoration: none;
 }
 
+.reset {
+    position: relative;
+    left: 10%;
+    bottom: 5px;
+    font-size: small;
+}
+
 .login {
     padding: 10px 25px;
-    margin: 24px 30px 5px 25px;
+    margin: 18px 25px 10px;
     border: none;
     background-color: #0b847a;
     color: white;
@@ -54,6 +73,10 @@ a {
     color: white;
     cursor: pointer;  
     border-radius: 5px;
+}
+
+.create-acc {
+    margin: 10px;
 }
 
 /* mobile devices styling */
