@@ -32,6 +32,18 @@ span {
     font-size: 14px;
 }
 
+i {
+    position: relative;
+    left: 31.5%;
+    bottom: 37px;
+    color: grey;
+    cursor: pointer;
+}
+
+.close-eye {
+    display: none;
+}
+
 a {
     text-decoration: none;
 }
