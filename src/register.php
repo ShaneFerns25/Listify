@@ -32,9 +32,10 @@
 <html lang="en">
     <head>
         <title>Listify Register</title>
-        <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-icons.min.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
         <script src="assets/js/displayPass.js"></script>
     </head>
 
@@ -45,11 +46,11 @@
                 <input id="Name" name="Name" type="text" placeholder="Enter Name" class="input_field" required><br>
                 <input id="Email" name="Email" type="text" placeholder="Enter Email" class="input_field" required><br>
                 <input id="Password" name="Password" type="password" placeholder="Enter Password" class="input_field" required><br>
-                <i class="bi bi-eye-fill open-eye" onclick="showAndHidePass()"></i>
-                <i class="bi bi-eye-slash-fill close-eye" onclick="showAndHidePass()"></i>
+                <i class="bi bi-eye-fill open-eye align" onclick="showAndHidePass()"></i>
+                <i class="bi bi-eye-slash-fill close-eye align" onclick="showAndHidePass()"></i>
                 <input id="ConfirmPass" name="ConfirmPass" type="password" placeholder="Confirm Password"  class="input_field" required><br>
-                <i class="bi bi-eye-fill open-eye" onclick="showAndHidePass()"></i>
-                <i class="bi bi-eye-slash-fill close-eye" onclick="showAndHidePass()"></i>
+                <i class="bi bi-eye-fill open-eye2 align2" onclick="showAndHidePass2()"></i>
+                <i class="bi bi-eye-slash-fill close-eye2 align2" onclick="showAndHidePass2()"></i>
                 <button class="register" name="submit" type="submit">Register</button><br>
                 <h3>Already have an account? <a href="index.php">Login</a></h3>
             </form>

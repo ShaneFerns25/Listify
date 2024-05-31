@@ -1,6 +1,4 @@
-function showAndHidePass() {
-    let pass = document.getElementById("Password");
-    let [open,close] = document.querySelectorAll(".open-eye,.close-eye");
+const displayPass=(pass,open,close)=>{
     if(pass.type === "password") {
         pass.type = "text";
         open.style.display="none";
@@ -10,4 +8,16 @@ function showAndHidePass() {
         open.style.display="inline-block";
         close.style.display="none";
     }
+}
+
+function showAndHidePass() {
+    let pass = document.getElementById("Password");
+    let [open,close] = document.querySelectorAll(".open-eye,.close-eye");
+    displayPass(pass,open,close);
+}
+
+function showAndHidePass2() {
+    let pass = document.getElementById("ConfirmPass");
+    let [open,close] = document.querySelectorAll(".open-eye2,.close-eye2");
+    displayPass(pass,open,close);
 }
