@@ -46,7 +46,7 @@
                 <input id="Password" name="Password" type="password" placeholder="Enter Password" class="input_field" required><br>
                 <i class="bi bi-eye-fill open-eye" onclick="showAndHidePass()"></i>
                 <i class="bi bi-eye-slash-fill close-eye" onclick="showAndHidePass()"></i>
-                <a href="resetpass.php" class="reset">Forgot password?</a><br>
+                <a href="forgot_pass.php" class="forgot-pass">Forgot password?</a><br>
                 <button class="login" name="submit" type="submit">Login</button><br>
                 <h3 class="create-acc">New to Listify? <a href="register.php">Create an account</a></h3>
             </form>
