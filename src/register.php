@@ -50,7 +50,6 @@
                 <input id="ConfirmPass" name="ConfirmPass" type="password" placeholder="Confirm Password"  class="input_field" required><br>
                 <i class="bi bi-eye-fill open-eye" onclick="showAndHidePass()"></i>
                 <i class="bi bi-eye-slash-fill close-eye" onclick="showAndHidePass()"></i>
-                <input type="checkbox" onclick="showpass()">Show Password<br>
                 <button class="register" name="submit" type="submit">Register</button><br>
                 <h3>Already have an account? <a href="index.php">Login</a></h3>
             </form>
