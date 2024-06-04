@@ -10,8 +10,8 @@ function hideAndShowNavbar(event) {
         setTimeout(() => {
             listIcon.style.display = "none";
             closeIcon.style.display = "inline-flex";
-            sidebar.style.transform = "translateX(-300px)";
-            main.style.transform = "translateX(-220px)";
+            sidebar.style.transform = "translateX(0px)";
+            main.style.transform = "translateX(0px)";
         }, 2000);
         setTimeout(() => {
             closeIcon.style.clipPath = "circle(150%)";
@@ -23,8 +23,8 @@ function hideAndShowNavbar(event) {
         setTimeout(() => {
             closeIcon.style.display = "none";
             listIcon.style.display = "inline-flex";
-            sidebar.style.transform = "translateX(0px)";
-            main.style.transform = "translateX(0px)";
+            sidebar.style.transform = "translateX(-300px)";
+            main.style.transform = "translateX(-220px)";
         }, 1500);
         setTimeout(() => {
             listIcon.style.clipPath = "circle(150%)";

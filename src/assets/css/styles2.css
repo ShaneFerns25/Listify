@@ -15,15 +15,15 @@ nav {
 #nav-list-icon {
     cursor: pointer;
     width: 22px;
-    display: inline-flex;
-    clip-path: circle(150%);
+    display: none;
+    clip-path: circle(0%);
     transition: clip-path 2s;
 }
 
 #nav-close-icon {
-    display: none;
+    display: inline-flex;
     cursor: pointer;
-    clip-path: circle(0%);
+    clip-path: circle(150%);
     transition: clip-path 2s;
     width: 22px;
 }
