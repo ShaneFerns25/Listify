@@ -34,8 +34,8 @@
         <title>Listify Register</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-icons.min.css">
-        <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="assets/css/styles.css" rel="stylesheet" type="text/css">
         <script src="assets/js/displayPass.js"></script>
     </head>
 
@@ -46,11 +46,11 @@
                 <input id="Name" name="Name" type="text" placeholder="Enter Name" class="input_field" required><br>
                 <input id="Email" name="Email" type="text" placeholder="Enter Email" class="input_field" required><br>
                 <input id="Password" name="Password" type="password" placeholder="Enter Password" class="input_field" required><br>
-                <i class="bi bi-eye-fill open-eye align" onclick="showAndHidePass()"></i>
-                <i class="bi bi-eye-slash-fill close-eye align" onclick="showAndHidePass()"></i>
-                <input id="ConfirmPass" name="ConfirmPass" type="password" placeholder="Confirm Password"  class="input_field" required><br>
-                <i class="bi bi-eye-fill open-eye2 align2" onclick="showAndHidePass2()"></i>
-                <i class="bi bi-eye-slash-fill close-eye2 align2" onclick="showAndHidePass2()"></i>
+                <i class="material-icons open-eye align" onclick="showAndHidePass()">visibility</i>
+                <i class="material-icons close-eye align" onclick="showAndHidePass()">visibility_off</i>
+                <input id="ConfirmPass" name="ConfirmPass" type="password" placeholder="Confirm Password" class="input_field" required><br>
+                <i class="material-icons open-eye2 align2" onclick="showAndHidePass2()">visibility</i>
+                <i class="material-icons close-eye2 align2" onclick="showAndHidePass2()">visibility_off</i>
                 <button class="register" name="submit" type="submit">Register</button><br>
                 <h3>Already have an account? <a href="index.php">Login</a></h3>
             </form>
