@@ -1,8 +1,9 @@
 <?php
 session_start();
 require_once 'includes/config.php';
-if(!isset($_SESSION['submitted'])){
-    $_SESSION['submitted']=0;
+
+if (!isset($_SESSION['submitted'])) {
+    $_SESSION['submitted'] = 0;
 }
 
 if (isset($_POST['login'])) {
@@ -14,7 +15,7 @@ if (isset($_POST['login'])) {
     $error = '';
     $msg = '';
 
-    if($_SESSION['submitted']<1){
+    if ($_SESSION['submitted'] < 1) {
 
         if (empty($email) && $isValid) {
             $isValid = false;
@@ -52,7 +53,7 @@ if (isset($_POST['login'])) {
             $token = bin2hex(random_bytes(64));
 
             $sql = "SELECT user_id FROM users WHERE email=:email AND password=:pwd";
-    
+
             $conn = getDbConnection();
             $query = $conn->prepare($sql);
             $query->bindParam(':email', $email, PDO::PARAM_STR);
@@ -75,9 +76,9 @@ if (isset($_POST['login'])) {
                 $query->bindParam(':token', $_SESSION['token'], PDO::PARAM_STR);
                 $query->execute();
                 if ($query->rowCount() > 0) {
-                    $result_msg='Token updated successfully.';
+                    $result_msg = 'Token updated successfully.';
                 } else {
-                    $result_msg='No rows affected. Token might be the same as the existing one or user_id does not exist.';
+                    $result_msg = 'An error has occurred. The token could not be updated.';
                 }
 
                 echo "<script>console.log('Updation: " . $result_msg . "' );</script>";
@@ -88,7 +89,7 @@ if (isset($_POST['login'])) {
             }
         }
     } else {
-        $msg='Already Logged in';
+        $msg = 'Already Logged in';
     }
 } else {
     $email = '';
@@ -112,21 +113,23 @@ if (isset($_POST['login'])) {
     <body>
         <div id="formback">
             <?php if ($error) { ?> 
-                <div class="errorWrap">
-                    <strong>ERROR</strong>: <?php echo $error; ?> 
-                </div>
+                        <div class="errorWrap">
+                            <strong>ERROR</strong>: <?php echo $error; ?> 
+                        </div>
             <?php } else if ($msg) { ?>
-                <div class="succWrap">
-                    <strong>SUCCESS</strong>: <?php echo $msg; ?> 
-                </div>
-            <?php header("refresh:4; url=profile.php");} ?>
+                                <div class="succWrap">
+                                    <strong>SUCCESS</strong>: <?php echo $msg; ?> 
+                                </div>
+                    <?php header("refresh:4; url=profile.php");
+                } ?>
             <div class="errorWrap clientSide">
                 <strong>ERROR</strong>:
             </div>
             <h2>Login to <span>Listify</span></h2>
-            <form id="loginForm" action="<?php if ($_SESSION['submitted'] < 1) echo "javascript:void(0);"?>" method="post">
-                <input id="Email" name="Email" type="text" placeholder="Enter Email" value="<?php if ($email)
-                    echo $email; ?>" class="input_field"><br>
+            <form id="loginForm" action="<?php if ($_SESSION['submitted'] < 1)
+                echo "javascript:void(0);" ?>" method="post">
+                        <input id="Email" name="Email" type="text" placeholder="Enter Email" value="<?php if ($email)
+                echo $email; ?>" class="input_field"><br>
                 <input id="Password" name="Password" type="password" placeholder="Enter Password" value="<?php if ($pwd)
                     echo $pwd; ?>" class="input_field"><br>
                 <i class="material-icons open-eye" onclick="showAndHidePass()">visibility</i>

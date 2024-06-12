@@ -2,8 +2,9 @@
 session_start();
 require_once 'includes/config.php';
 require_once 'guzzle.php';
-if(!isset($_SESSION['submitted'])){
-    $_SESSION['submitted']=0;
+
+if (!isset($_SESSION['submitted'])) {
+    $_SESSION['submitted'] = 0;
 }
 
 if (isset($_POST['register'])) {
@@ -18,8 +19,8 @@ if (isset($_POST['register'])) {
     $error = '';
     $msg = '';
 
-    if($_SESSION['submitted']<1){
-        
+    if ($_SESSION['submitted'] < 1) {
+
         if (empty($name) && $isValid) {
             $isValid = false;
             $error = 'Name is required.';
@@ -29,10 +30,10 @@ if (isset($_POST['register'])) {
             $isValid = false;
             $error = 'Name should be less than 100 characters.';
         }
-        
+
         if (!preg_match($regName, $name) && $isValid) {
             $isValid = false;
-            
+
             $error = 'Name should only have alphabetic characters, spaces, hyphens, and apostrophes.';
         }
 
@@ -51,10 +52,10 @@ if (isset($_POST['register'])) {
             $error = 'Please enter a valid Email';
         }
 
-        if (preg_match($regEmail, $email) && $isValid){
-            $res=postReqCheckEmailAvailability($client,$email);
-           [$status,$msg]=json_decode($res, true);
-            if ($status!='success') {
+        if (preg_match($regEmail, $email) && $isValid) {
+            $res = postReqCheckEmailAvailability($client, $email);
+            [$status, $msg] = json_decode($res, true);
+            if ($status != 'success') {
                 $isValid = false;
                 $error = $msg;
             }
@@ -125,7 +126,7 @@ if (isset($_POST['register'])) {
             }
         }
     } else {
-        $msg='Already Registered';
+        $msg = 'Already Registered';
     }
 } else {
     $name = '';
@@ -151,22 +152,23 @@ if (isset($_POST['register'])) {
     <body>
         <div id="formback">
             <?php if ($error) { ?> 
-                        <div class="errorWrap">
-                            <strong>ERROR</strong>: <?php echo $error; ?> 
-                        </div>
-            <?php } else if ($msg) { ?>
-                                <div class="succWrap">
-                                    <strong>SUCCESS</strong>: <?php echo $msg; ?> 
+                                <div class="errorWrap">
+                                    <strong>ERROR</strong>: <?php echo $error; ?> 
                                 </div>
-                <?php header("refresh:4; url=profile.php"); 
+            <?php } else if ($msg) { ?>
+                                                <div class="succWrap">
+                                                    <strong>SUCCESS</strong>: <?php echo $msg; ?> 
+                                                </div>
+                        <?php header("refresh:4; url=profile.php");
                 } ?>
             <div class="errorWrap clientSide">
                 <strong>ERROR</strong>:
             </div>
             <h2>Join <span>Listify</span>!</h2>
-            <form id="registerForm" action="<?php if ($_SESSION['submitted'] < 1) echo "javascript:void(0);"?>" method="post">
-                <input id="Name" name="Name" type="text" placeholder="Enter Name" value="<?php if ($name)
-                    echo $name; ?>" class="input_field" ><br>
+            <form id="registerForm" action="<?php if ($_SESSION['submitted'] < 1)
+                echo "javascript:void(0);" ?>" method="post">
+                        <input id="Name" name="Name" type="text" placeholder="Enter Name" value="<?php if ($name)
+                echo $name; ?>" class="input_field" ><br>
                 <input id="Email" name="Email" type="text" placeholder="Enter Email" value="<?php if ($email)
                     echo $email; ?>" class="input_field" ><br>
                 <input id="Password" name="Password" type="password" placeholder="Enter Password" value="<?php if ($pwd)
