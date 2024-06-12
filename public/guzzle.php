@@ -2,7 +2,7 @@
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
 
-require 'vendor/autoload.php';
+require_once 'vendor/autoload.php';
 
 $client = new Client(['base_uri' => 'http://localhost/Listify/']);
 

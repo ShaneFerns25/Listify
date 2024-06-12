@@ -100,7 +100,7 @@ if (isset($_POST['register'])) {
 
             $token = bin2hex(random_bytes(64));
 
-            $sql = "INSERT INTO users(Name,Email,Password,Token) VALUES(:name,:email,:pwd,:token)";
+            $sql = "INSERT INTO users(name,email,password,token) VALUES(:name,:email,:pwd,:token)";
 
             $conn = getDbConnection();
             $query = $conn->prepare($sql);
@@ -158,12 +158,13 @@ if (isset($_POST['register'])) {
                                 <div class="succWrap">
                                     <strong>SUCCESS</strong>: <?php echo $msg; ?> 
                                 </div>
-                <?php header("refresh:4; url=profile.php"); } ?>
+                <?php header("refresh:4; url=profile.php"); 
+                } ?>
             <div class="errorWrap clientSide">
                 <strong>ERROR</strong>:
             </div>
             <h2>Join <span>Listify</span>!</h2>
-            <form id="registerForm" action="javascript:void(0);" method="post">
+            <form id="registerForm" action="<?php if ($_SESSION['submitted'] < 1) echo "javascript:void(0);"?>" method="post">
                 <input id="Name" name="Name" type="text" placeholder="Enter Name" value="<?php if ($name)
                     echo $name; ?>" class="input_field" ><br>
                 <input id="Email" name="Email" type="text" placeholder="Enter Email" value="<?php if ($email)
