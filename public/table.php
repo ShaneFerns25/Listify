@@ -10,16 +10,27 @@
         <table id="products-table">
             <thead>
                 <tr>
-                    <th>User ID</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Mobile Number</th>
-                    <th>Town/City</th>
-                    <th>Country</th>
+                    <th>ProductID</th>
+                    <th>name</th>
+                    <th>description</th>
+                    <th>price</th>
+                    <th>category</th>
+                    <th>brand</th>
+                    <th>quantity</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
+                    <td class="this-td"><?php echo $result->ProductID ?></td>
+                    <td class="this-td1"><?php echo $result->name ?></td>
+                    <td class="this-td2"><?php echo $result->description ?></td>
+                    <td class="this-td3"><?php echo $result->price ?></td>
+                    <td class="this-td4"><?php echo $result->category ?></td>
+                    <td class="this-td5"><?php echo $result->brand ?></td>
+                    <td class="this-td6"><?php echo $result->quantity ?></td>
+                </tr>
+                <tr>
+                    <td>Row 1 Data 2</td>
                     <td>Row 1 Data 1</td>
                     <td>Row 1 Data 2</td>
                     <td>Row 1 Data 1</td>
@@ -28,14 +39,7 @@
                     <td>Row 1 Data 2</td>
                 </tr>
                 <tr>
-                    <td>Row 1 Data 1</td>
                     <td>Row 1 Data 2</td>
-                    <td>Row 1 Data 1</td>
-                    <td>Row 1 Data 2</td>
-                    <td>Row 1 Data 1</td>
-                    <td>Row 1 Data 2</td>
-                </tr>
-                <tr>
                     <td>Row 1 Data 1</td>
                     <td>Row 1 Data 2</td>
                     <td>Row 1 Data 1</td>
@@ -44,14 +48,7 @@
                     <td>Row 1 Data 2</td>
                 </tr>
                 <tr>
-                    <td>Row 1 Data 1</td>
                     <td>Row 1 Data 2</td>
-                    <td>Row 1 Data 1</td>
-                    <td>Row 1 Data 2</td>
-                    <td>Row 1 Data 1</td>
-                    <td>Row 1 Data 2</td>
-                </tr>
-                <tr>
                     <td>Row 1 Data 1</td>
                     <td>Row 1 Data 2</td>
                     <td>Row 1 Data 1</td>
@@ -60,14 +57,7 @@
                     <td>Row 1 Data 2</td>
                 </tr>
                 <tr>
-                    <td>Row 1 Data 1</td>
                     <td>Row 1 Data 2</td>
-                    <td>Row 1 Data 1</td>
-                    <td>Row 1 Data 2</td>
-                    <td>Row 1 Data 1</td>
-                    <td>Row 1 Data 2</td>
-                </tr>
-                <tr>
                     <td>Row 1 Data 1</td>
                     <td>Row 1 Data 2</td>
                     <td>Row 1 Data 1</td>
@@ -76,14 +66,7 @@
                     <td>Row 1 Data 2</td>
                 </tr>
                 <tr>
-                    <td>Row 1 Data 1</td>
                     <td>Row 1 Data 2</td>
-                    <td>Row 1 Data 1</td>
-                    <td>Row 1 Data 2</td>
-                    <td>Row 1 Data 1</td>
-                    <td>Row 1 Data 2</td>
-                </tr>
-                <tr>
                     <td>Row 1 Data 1</td>
                     <td>Row 1 Data 2</td>
                     <td>Row 1 Data 1</td>
@@ -92,6 +75,34 @@
                     <td>Row 1 Data 2</td>
                 </tr>
                 <tr>
+                    <td>Row 1 Data 2</td>
+                    <td>Row 1 Data 1</td>
+                    <td>Row 1 Data 2</td>
+                    <td>Row 1 Data 1</td>
+                    <td>Row 1 Data 2</td>
+                    <td>Row 1 Data 1</td>
+                    <td>Row 1 Data 2</td>
+                </tr>
+                <tr>
+                    <td>Row 1 Data 2</td>
+                    <td>Row 1 Data 1</td>
+                    <td>Row 1 Data 2</td>
+                    <td>Row 1 Data 1</td>
+                    <td>Row 1 Data 2</td>
+                    <td>Row 1 Data 1</td>
+                    <td>Row 1 Data 2</td>
+                </tr>
+                <tr>
+                    <td>Row 1 Data 2</td>
+                    <td>Row 1 Data 1</td>
+                    <td>Row 1 Data 2</td>
+                    <td>Row 1 Data 1</td>
+                    <td>Row 1 Data 2</td>
+                    <td>Row 1 Data 1</td>
+                    <td>Row 1 Data 2</td>
+                </tr>
+                <tr>
+                    <td>Row 1 Data 2</td>
                     <td>Row 1 Data 1</td>
                     <td>Row 1 Data 2</td>
                     <td>Row 1 Data 1</td>
