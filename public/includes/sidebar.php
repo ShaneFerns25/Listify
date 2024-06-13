@@ -5,21 +5,8 @@
                     <img src="assets/img/user.png" alt="user picture">
                 </div>
                 <div id="user-info">
-                    <?php
-                    // $eid=$_SESSION['eid'];
-                    // $sql = "SELECT Name, Email from  tblemployees where EmpId=:eid";
-                    // $query = $dbh -> prepare($sql);
-                    // $query->bindParam(':eid',$eid,PDO::PARAM_STR);
-                    // $query->execute();
-                    // $results=$query->fetchAll(PDO::FETCH_OBJ);
-                    // $cnt=1;
-                    // if($query->rowCount() > 0)
-                    // {
-                    // foreach($results as $result)
-                    // {               ?>
-                    <h6 class="user-name"><?php //echo htmlentities($result->Name); ?>hello</h6>
-                    <span><?php //echo htmlentities($result->Email) ?>hello</span>
-                    <?php //}} ?>
+                    <h6 id="user-name"><?php echo $response['data']->name; ?></h6>
+                    <span><?php echo $response['data']->email; ?></span>
                 </div>
             </div>
             <ul id="bottom-part">

@@ -66,10 +66,13 @@ img {
 
 #user-info {
     padding-left: 10px;
+    font-style: italic;
+    font-weight: bolder;
 }
 
 #user-name {
-    margin: 0;
+    margin: 3px;
+    font-weight: bolder;
 }
 
 #bottom-part {
@@ -121,6 +124,10 @@ img {
     margin-bottom: 20px;
 }
 
+.h3-bold {
+    font-weight: bold;
+}
+
 .update,
 .reset-pass {
     position: relative;
@@ -154,8 +161,13 @@ iframe {
     margin: 0 0 20px 0;
     background: #fff;
     border-left: 4px solid #dd3d36;
-    -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .1);
-    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .1);
+    border-radius: 3px;
+    box-shadow: 2px 5px 4px 2px rgba(0, 0, 0, 0.18), 0 7px 15px 7px rgba(0, 0, 0, 0.15);
+    color: black;
+}
+
+strong {
+    font-weight: bold;
 }
 
 .succWrap {
@@ -163,6 +175,11 @@ iframe {
     margin: 0 0 20px 0;
     background: #fff;
     border-left: 4px solid #5cb85c;
-    -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .1);
-    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .1);
+    border-radius: 3px;
+    box-shadow: 2px 5px 4px 2px rgba(0, 0, 0, 0.18), 0 7px 15px 7px rgba(0, 0, 0, 0.15);
+    color: black;
+}
+
+.clientSide {
+    display: none;
 }

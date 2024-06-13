@@ -33,7 +33,6 @@ if (isset($_POST['register'])) {
 
         if (!preg_match($regName, $name) && $isValid) {
             $isValid = false;
-
             $error = 'Name should only have alphabetic characters, spaces, hyphens, and apostrophes.';
         }
 
@@ -54,10 +53,10 @@ if (isset($_POST['register'])) {
 
         if (preg_match($regEmail, $email) && $isValid) {
             $res = postReqCheckEmailAvailability($client, $email);
-            [$status, $msg] = json_decode($res, true);
+            [$status, $message] = json_decode($res, true);
             if ($status != 'success') {
                 $isValid = false;
-                $error = $msg;
+                $error = $message;
             }
         }
 
