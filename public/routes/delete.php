@@ -10,7 +10,7 @@ function deleteProduct($app) {
         $data = $request->getParsedBody();
         $pid = $data['Product_ID'] ?? '';
 
-        $sql = "DELETE FROM products WHERE ProductID=:pid;";
+        $sql = "DELETE FROM products WHERE ProductID=:pid";
         $query = $conn->prepare($sql);
         $query-> bindParam(':pid', $pid, PDO::PARAM_STR);
         $query->execute();

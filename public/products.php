@@ -114,27 +114,32 @@ $msg= "";
             let errorWrap=$('.displayError');
             let successWrap=$('.displaySuccess');
 
-            $.ajax({
-                url: "/Listify/delete-product",
-                type: 'post',
-                dataType: "json",
-                data: { Product_ID: pid},
-                success: function(response) {
-                    console.log(response);
-                    if (response.status=="error"){
+            if (confirm("Are you sure you want to delete this row?")) {
+                $.ajax({
+                    url: "/Listify/delete-product",
+                    type: 'post',
+                    dataType: "json",
+                    data: { Product_ID: pid},
+                    success: function(response) {
+                        console.log(response);
+                        if (response.status=="error"){
+                            errorWrap.css("display", "block");
+                            errorWrap[0].childNodes[2].nodeValue = `: ${response.message}`;
+                        }  else{
+                            successWrap.css("display", "block");
+                            successWrap[0].childNodes[2].nodeValue = `: ${response.message}`;
+                            setTimeout(() => {
+                                location.reload();
+                            }, 2500);
+                        }
+                    },
+                    error: function(error) {
+                        console.error(error.responseJSON);
                         errorWrap.css("display", "block");
-                        errorWrap[0].childNodes[2].nodeValue = `: ${response.message}`;
-                    }  else{
-                        successWrap.css("display", "block");
-                        successWrap[0].childNodes[2].nodeValue = `: ${response.message}`;
+                        errorWrap[0].childNodes[2].nodeValue = `: ${error.responseJSON.message}`;
                     }
-                },
-                error: function(error) {
-                    console.error(error.responseJSON);
-                    errorWrap.css("display", "block");
-                    errorWrap[0].childNodes[2].nodeValue = `: ${error.responseJSON.message}`;
-                }
-            });
+                });
+            }
         }
     </script>
 </html>
