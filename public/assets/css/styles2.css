@@ -183,3 +183,7 @@ strong {
 .clientSide {
     display: none;
 }
+
+.delete-icon {
+    cursor: pointer;
+}
