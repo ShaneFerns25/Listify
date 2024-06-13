@@ -1,10 +1,30 @@
 <?php
-// include('includes/config.php');
-// if(strlen($_SESSION['emplogin'])==0)
-//     {   
-// header('location:index.php');
-// }
-// else{
+session_start();
+require_once "includes/config.php";
+
+$response=verifyToken($_SESSION['id'], $_SESSION['token']);
+if (!$response['success']) {
+    header('Location: logout.php');
+} else {
+    $name = $response['data']->name;
+    $email = $response['data']->email;
+    $mobile_number = $response['data']->mobile_number;
+    $dob = $response['data']->dob;
+    $town_or_city = $response['data']->town_or_city;
+    $country = $response['data']->country;
+}   
+
+$sql = "SELECT * FROM products";
+
+$conn = getDbConnection();
+$query = $conn->prepare($sql);
+$query->execute();
+$results = $query->fetchAll(PDO::FETCH_OBJ);
+if ($query->rowCount() > 0) {
+    $result=$results[0];
+    print_r($result);
+    echo $result->ProductID;
+} else {}
 $header_title = "Products";
 ?>
 <!DOCTYPE html>
@@ -21,8 +41,8 @@ $header_title = "Products";
     </head>
 
     <body>
-        <?php include "includes/header.php"; ?>
-        <?php include "includes/sidebar.php"; ?>
+        <?php require_once "includes/header.php"; ?>
+        <?php require_once "includes/sidebar.php"; ?>
         <main class="main-inner">
             <div class="row">
                 <div class="col s12 m12 l12">
@@ -30,7 +50,8 @@ $header_title = "Products";
                         <div class="card-content">
                             <!-- <?php //if($msg){ ?><div class="succWrap"><strong>SUCCESS</strong> : <?php //echo htmlentities($msg); ?> </div><?php //} ?> -->
                             <div id="products-table">
-                                <iframe src="table.html" frameborder="0"></iframe>
+
+                                <iframe src="table.php" frameborder="0"></iframe>
                             </div>
 
                             <?php
@@ -69,5 +90,16 @@ $header_title = "Products";
             </div>
         </main>
     </body>
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // $('.this-td').val(<?php //echo $result->ProductID ?>);
+            // $('.this-td1').val(<?php // echo $result->name ?>);
+            // $('.this-td2').val(<?php //echo $result->description ?>);
+            // $('.this-td3').val(<?php // echo $result->price ?>);
+            // $('.this-td4').val(<?php //echo $result->category ?>);
+            // $('.this-td5').val(<?php //echo $result->brand ?>);
+            // $('.this-td6').val(<?php //echo $result->quantity ?>);
+        });
+    </script>
 </html>
-<?php // } ?>
