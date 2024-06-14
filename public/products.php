@@ -262,7 +262,6 @@ $header_title = "Products";
         function deleteRow(event){
             let tdElement = event.srcElement.parentElement.parentElement.firstElementChild;
             let pid = parseInt(tdElement.textContent || tdElement.innerText, 10);
-            console.log(pid);
 
             let errorWrap=$('.displayError');
             let successWrap=$('.displaySuccess');
