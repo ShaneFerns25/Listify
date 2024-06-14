@@ -134,7 +134,7 @@ if (isset($_POST['login'])) {
                     echo $pwd; ?>" class="input_field"><br>
                 <i class="material-icons open-eye" onclick="showAndHidePass()">visibility</i>
                 <i class="material-icons close-eye" onclick="showAndHidePass()">visibility_off</i>
-                <a href="resetpass.php" class="reset">Forgot password?</a><br>
+                <a href="forgot_pass.php" class="reset-link">Forgot password?</a><br>
                 <button class="login" name="login" type="submit">Login</button><br>
                 <h3 class="create-acc">New to Listify? <a href="register.php">Create an account</a></h3>
             </form>

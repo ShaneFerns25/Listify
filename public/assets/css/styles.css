@@ -33,6 +33,10 @@ span {
     font-size: 14px;
 }
 
+.hidden {
+    display: none;
+}
+
 i {
     position: relative;
     left: 31.5%;
@@ -65,11 +69,15 @@ i {
     display: none;
 }
 
+.align3 {
+    left: 25.5%;
+}
+
 a {
     text-decoration: none;
 }
 
-.reset {
+.forgot-pass {
     position: relative;
     left: 10%;
     bottom: 5px;
@@ -103,6 +111,13 @@ a {
 .login:hover,
 .register:hover {
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+}
+
+.reset-link {
+    position: relative;
+    left: 10%;
+    bottom: 5px;
+    font-size: small;
 }
 
 .create-acc {
