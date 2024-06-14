@@ -1,36 +1,42 @@
 <?php
-require_once 'includes/config.php';
-// if(strlen($_SESSION['emplogin'])==0)
-//     {   
-// header('location:index.php');
-// }
-// else{
-// Code for change password 
-// if(isset($_POST['change']))
-//     {
-// $password=md5($_POST['password']);
-// $newpassword=md5($_POST['newpassword']);
-// $username=$_SESSION['emplogin'];
-//     $sql ="SELECT Password FROM tblemployees WHERE EmailId=:username and Password=:password";
-// $query= $dbh -> prepare($sql);
-// $query-> bindParam(':username', $username, PDO::PARAM_STR);
-// $query-> bindParam(':password', $password, PDO::PARAM_STR);
-// $query-> execute();
-// $results = $query -> fetchAll(PDO::FETCH_OBJ);
-// if($query -> rowCount() > 0)
-// {
-// $con="update tblemployees set Password=:newpassword where EmailId=:username";
-// $chngpwd1 = $dbh->prepare($con);
-// $chngpwd1-> bindParam(':username', $username, PDO::PARAM_STR);
-// $chngpwd1-> bindParam(':newpassword', $newpassword, PDO::PARAM_STR);
-// $chngpwd1->execute();
-// $msg="Your Password succesfully changed";
-// }
-// else {
-// $error="Your current password is wrong";    
-// }
+session_start();
+require_once "includes/config.php";
+
+$response=verifyToken($_SESSION['id'], $_SESSION['token']);
+if (!$response['success']) {
+    header('Location: logout.php');
+} else {
+    $name = $response['data']->name;
+    $email = $response['data']->email;
+    $mobile_number = $response['data']->mobile_number;
+    $dob = $response['data']->dob;
+    $town_or_city = $response['data']->town_or_city;
+    $country = $response['data']->country;
+}   
+
+// if (isset($_POST['change'])) {
+//     $password = md5($_POST['password']);
+//     $newpassword = md5($_POST['newpassword']);
+//     $username = $_SESSION['emplogin'];
+//     $sql = "SELECT Password FROM tblemployees WHERE EmailId=:username and Password=:password";
+//     $query = $dbh->prepare($sql);
+//     $query->bindParam(':username', $username, PDO::PARAM_STR);
+//     $query->bindParam(':password', $password, PDO::PARAM_STR);
+//     $query->execute();
+//     $results = $query->fetchAll(PDO::FETCH_OBJ);
+//     if ($query->rowCount() > 0) {
+//         $con = "update tblemployees set Password=:newpassword where EmailId=:username";
+//         $chngpwd1 = $dbh->prepare($con);
+//         $chngpwd1->bindParam(':username', $username, PDO::PARAM_STR);
+//         $chngpwd1->bindParam(':newpassword', $newpassword, PDO::PARAM_STR);
+//         $chngpwd1->execute();
+//         $msg = "Your Password succesfully changed";
+//     } else {
+//         $error = "Your current password is wrong";
+//     }
 // }
 $header_title = "Change Password";
+
 ?>
 
 <!DOCTYPE html>
@@ -94,4 +100,3 @@ $header_title = "Change Password";
         </main>
     </body>
 </html>
-<?php //} ?>
