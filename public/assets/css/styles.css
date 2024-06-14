@@ -69,6 +69,10 @@ i {
     display: none;
 }
 
+.align3 {
+    left: 25.5%;
+}
+
 a {
     text-decoration: none;
 }
@@ -109,14 +113,11 @@ a {
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
-.reset {
-    padding: 10px 25px;
-    margin: 18px 25px 10px;
-    border: none;
-    background-color: #0b847a;
-    color: white;
-    cursor: pointer;  
-    border-radius: 5px;
+.reset-link {
+    position: relative;
+    left: 10%;
+    bottom: 5px;
+    font-size: small;
 }
 
 .create-acc {
