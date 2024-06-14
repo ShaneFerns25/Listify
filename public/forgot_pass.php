@@ -183,6 +183,6 @@ if (isset($_POST['reset'])) {
             </form>
         </div>
         <script src="assets/js/jquery-3.7.1.min.js"></script>
-        <!-- <script src="assets/js/validate-forgot-pass.js"></script> -->
+        <script src="assets/js/validate-forgot-pass.js"></script>
     </body>
 </html>
