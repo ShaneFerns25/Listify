@@ -184,6 +184,14 @@ strong {
     display: none;
 }
 
-.delete-icon {
+.delete-icon, .update-icon {
     cursor: pointer;
+}
+
+.modal {
+    max-height: 90%;
+}
+
+.modal-form-row {
+    margin-bottom: 0px;
 }
