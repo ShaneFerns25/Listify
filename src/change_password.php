@@ -1,5 +1,5 @@
 <?php
-// include('includes/config.php');
+require_once 'includes/config.php';
 // if(strlen($_SESSION['emplogin'])==0)
 //     {   
 // header('location:index.php');
@@ -47,8 +47,8 @@ $header_title = "Change Password";
     </head>
 
     <body>
-        <?php include "includes/header.php"; ?>
-        <?php include "includes/sidebar.php"; ?>
+        <?php require_once "includes/header.php"; ?>
+        <?php require_once "includes/sidebar.php"; ?>
         <main class="main-inner">
             <div class="row">
                 <div class="col s12 m12 l6">
